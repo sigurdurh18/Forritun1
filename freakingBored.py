@@ -1,25 +1,47 @@
-n = 12
+matrix=[
+[11,21,31],
+[12,22,32],
+[13,23,33]
+]
+matrix2=[
+[11,21,31],
+[12,22,32]
+]
+class Matrix:
+	def __init__(self, val): #set
+		if(type(val)==list):
+			self.val = val
+		else:
+			self.val=-1
 
-'''def fib(i):
-    if(i!=1):
-        arr=fib(i-1)
-        newNum=arr[i-2]+arr[i-1]+arr[i]
-        arr.append(newNum)
-        print(str(newNum))
-        return(arr)
-    else:
-        print("1")
-        return[1,0,1]
+	def __eq__(self, other): #comper
+		return self.val == other.val
 
-fib(n)'''
+	def __repr__(self): #get
+		return self.val
 
-num1=1
-num2=0
-num3=1
-newNum=0
-for x in range(n):
-	print(num3)
-	newNum=num3+num2+num1
-	num1=num2
-	num2=num3
-	num3=newNum
+	def __mul__(self, other):#multiplication self * other
+		if(type(self)==type(other)):
+			if(len(self.val)==len(other.val[0])):
+				new_matrix=[]
+				for y in range(len(self.val)):
+					new_matrix.append([])
+					for x in range(len(other.val[0])):
+						new_matrix[y].append(0)				
+				for y in range(len(self.val)):
+					for x in range(len(other.val[0])):
+						for i in range(len(self.val[y])):
+							new_matrix[y][x]+=self.val[y][i]*other.val[i][x]
+				return Matrix(new_matrix)
+			else:
+				return Matrix([])
+		else:
+			return self
+
+	def __invert__(self):
+		print("kekules")
+
+first = Matrix(matrix)
+second = Matrix(matrix)
+empty = first*second
+~empty

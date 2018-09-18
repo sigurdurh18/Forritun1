@@ -1,26 +1,15 @@
-i = 1
-par=0
-score=0
-while i<=18:
-    par=int(input("Par of hole "+str(i))
-    score=int(input("Score on hole "+str(i))
-    if(score<par-3):
-        print("invalid score")
-    elif(score==par-3):
-        print("albatross")
-    elif(score==par-2):
-        print("eagle")
-    elif(score==par-1):
-        print("birdie")
-    elif(score==par):
-        print("par")
-    elif(score==par+1):
-        print("bogey")
-    elif(score==par+2):
-        print("double bogey")
-    elif(score==par+3):
-        print("triple bogey")
-    else:
-        print("bad hole")
-    i+=1
-    
+inputName='scratch'#input("Enter a word: ")
+tel = 0
+
+for c in inputName.lower():
+	if not (c=='a' or c=='e' or c=='i' or c=='o' or c=='u'):
+		tel+=1
+	else:
+		break
+
+if tel==0:
+	inputName+='yay'
+else:
+	inputName=inputName[tel:]+inputName[:tel]+'ay'
+
+print(inputName)
