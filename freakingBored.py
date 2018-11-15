@@ -1,11 +1,12 @@
 matrix=[
-[11,21,31],
-[12,22,32],
-[13,23,33]
+[1],
+[0],
+[0]
 ]
 matrix2=[
-[11,21,31],
-[12,22,32]
+[0,-1,0],
+[1,5,0],
+[0,0,0]
 ]
 class Matrix:
 	def __init__(self, val): #set
@@ -44,4 +45,5 @@ class Matrix:
 first = Matrix(matrix)
 second = Matrix(matrix)
 empty = first*second
+print(empty.val)
 ~empty

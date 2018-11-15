@@ -1,10 +1,6 @@
-key=input()
-pos=1
-while key == 'r' or key == 'q':
-	if(key=='r' and pos<10):
-		pos+=1
-	elif(key=='q' and pos>1):
-		pos-1
-
-	print(pos)
-	key=input()
+class 
+class Database:
+    def __init__(self):
+        with open(database.txt) as fil:
+            self.data=set()
+            for line in fil:
